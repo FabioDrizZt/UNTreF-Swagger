@@ -5,7 +5,7 @@ const getAllActors = async (req, res) => {
   try {
     const actors = await Actor.findAll();
     if (actors.length > 0) {
-      res.json(actors);
+      res.status(200).json(actors);
     } else {
       res.status(404).send({ error: "No se encontraron actores para listar" });
     }
